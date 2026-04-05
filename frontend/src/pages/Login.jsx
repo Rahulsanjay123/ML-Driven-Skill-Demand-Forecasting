@@ -15,7 +15,7 @@ function Login() {
         setError("")
         try {
             const res = await axios.post(
-                "http://localhost:5001/api/auth/login",
+                "/api/auth/login",
                 { email, password }
             )
             // Backend returns { token, user }

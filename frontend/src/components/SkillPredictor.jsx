@@ -14,7 +14,7 @@ function SkillPredictor() {
         setResult(null)
         try {
             const res = await axios.post(
-                "http://localhost:5001/api/predict",
+                "/api/predict",
                 {
                     skill,
                     job_postings: 12000,

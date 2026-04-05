@@ -52,7 +52,7 @@ function Forecast() {
         setError("")
         setResult(null)
         try {
-            const baseUrl = import.meta.env.VITE_API_URL || "http://localhost:5001/api"
+            const baseUrl = import.meta.env.VITE_API_URL || "/api"
             
             // 1. Get Prediction from ML proxy
             const predictRes = await axios.post(
