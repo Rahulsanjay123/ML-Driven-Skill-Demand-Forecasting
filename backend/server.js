@@ -38,6 +38,10 @@ app.use(cors({
 app.use(express.json())
 
 // Routes
+app.get("/", (req, res) => {
+    res.json({ message: "Skill Forecasting API is running successfully!" })
+})
+
 app.use("/api/auth", authRoutes)
 app.use("/api/predict", predictionRoutes)
 app.use("/api/skills", skillsRoutes)
