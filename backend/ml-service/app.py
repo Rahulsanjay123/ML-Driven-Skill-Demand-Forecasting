@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import joblib
 import numpy as np
+import os
 
 # -----------------------------
 # Initialize Flask
@@ -11,11 +12,15 @@ app = Flask(__name__)
 CORS(app)
 
 # -----------------------------
-# Load ML Model
+# Load ML Model (Robust paths for deployment)
 # -----------------------------
 
-model = joblib.load("skill_model.pkl")
-encoder = joblib.load("skill_encoder.pkl")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(BASE_DIR, "skill_model.pkl")
+encoder_path = os.path.join(BASE_DIR, "skill_encoder.pkl")
+
+model = joblib.load(model_path)
+encoder = joblib.load(encoder_path)
 
 print("ML Model Loaded Successfully")
 
