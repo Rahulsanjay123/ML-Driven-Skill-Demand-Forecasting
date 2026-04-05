@@ -17,23 +17,7 @@ const __dirname = path.dirname(__filename)
 
 const app = express()
 
-// CORS configuration for production
-const allowedOrigins = [
-  process.env.FRONTEND_URL,
-  "http://localhost:5173",
-  "https://ml-skill-forecasting.vercel.app" // User can update this
-].filter(Boolean)
-
-app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin) || allowedOrigins.length === 0) {
-      callback(null, true)
-    } else {
-      callback(new Error("Not allowed by CORS"))
-    }
-  },
-  credentials: true
-}))
+app.use(cors()) // Temporarily allow all origins for deployment
 
 app.use(express.json())
 
