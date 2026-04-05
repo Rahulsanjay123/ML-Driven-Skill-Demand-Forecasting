@@ -5,17 +5,15 @@ const router = express.Router()
 
 router.post("/", async (req, res) => {
     console.log("--- New Prediction Request ---")
-    console.log("Body:", JSON.stringify(req.body, null, 2))
     
     try {
-        const mlUrl = process.env.ML_SERVICE_URL || "http://127.0.0.1:5000/predict"
-        console.log(`[Backend Proxy] Forwarding to: ${mlUrl}`)
+        // In a single-service setup on Render, the Flask app runs on localhost:5002
+        const mlUrl = process.env.ML_SERVICE_URL || "http://127.0.0.1:5002/predict"
+        console.log(`[Backend Proxy] Forwarding to internal ML Service at: ${mlUrl}`)
         
         const response = await axios.post(mlUrl, req.body)
         
         console.log("[Backend Proxy] Success from ML Service")
-        console.log("Response Data:", JSON.stringify(response.data, null, 2))
-        
         res.json(response.data)
 
     } catch (error) {
@@ -23,19 +21,15 @@ router.post("/", async (req, res) => {
         console.error("Message:", error.message)
         
         if (error.response) {
-            console.error("ML Service Error Data:", JSON.stringify(error.response.data, null, 2))
-            console.error("Status:", error.response.status)
-        } else if (error.request) {
-            console.error("No response from ML Service. Is it running on port 5000?")
+            console.error("ML Service Error Details:", error.response.data)
         }
         
         res.status(500).json({
             error: "Prediction failed",
             details: error.message,
-            hint: "Check if the ML service is running on port 5000"
+            hint: "Check if the Python ML service successfully started on port 5002."
         })
     }
-    console.log("------------------------------")
 })
 
 export default router
