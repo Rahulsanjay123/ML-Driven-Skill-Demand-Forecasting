@@ -53,6 +53,8 @@ function Forecast() {
         setResult(null)
         try {
             const baseUrl = import.meta.env.VITE_API_URL || "/api"
+            console.log("--- CALLING PREDICTION API ---")
+            console.log("Full URL:", `${baseUrl}/predict`)
             
             // Single robust call for both prediction and metadata
             const res = await axios.post(
@@ -67,12 +69,19 @@ function Forecast() {
                 }
             )
             
+            console.log("API Result:", res.data)
             setResult({
                 ...res.data,
                 metadata: res.data.metadata || skillDetails.default
             })
             setActiveTab("about")
         } catch (err) {
+            console.error("--- API CALL FAILED ---")
+            console.error("Error Message:", err.message)
+            if (err.response) {
+                console.error("Response Status:", err.response.status)
+                console.error("Response Data:", err.response.data)
+            }
             setError("Could not fetch prediction. Please ensure the backend is running.")
         } finally {
             setLoading(false)

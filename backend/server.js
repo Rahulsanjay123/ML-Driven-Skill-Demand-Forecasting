@@ -15,11 +15,14 @@ dotenv.config()
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const app = express()
-
-app.use(cors()) // Temporarily allow all origins for deployment
-
+app.use(cors())
 app.use(express.json())
+
+// Diagnostic Global Logger
+app.use((req, res, next) => {
+    console.log(`[API-LOG] ${req.method} ${req.url}`)
+    next()
+})
 
 // Routes
 app.get("/", (req, res) => {
