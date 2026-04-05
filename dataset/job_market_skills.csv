@@ -1,0 +1,96 @@
+skill,demand,salary,growth
+Python,95,130000,38
+Machine Learning,93,145000,42
+Data Science,90,140000,35
+React,88,115000,30
+Node.js,85,110000,28
+Cybersecurity,92,150000,40
+Cloud Computing,94,148000,39
+DevOps,91,142000,37
+Blockchain,84,135000,25
+AI Engineering,96,155000,45
+Java,87,120000,29
+C++,82,118000,26
+C#,83,117000,27
+Go,86,125000,32
+Rust,80,128000,34
+Kotlin,84,112000,28
+Swift,83,115000,30
+Flutter,85,110000,31
+Angular,86,113000,29
+Vue.js,87,114000,30
+Django,88,119000,33
+Flask,86,116000,31
+Spring Boot,89,123000,34
+SQL,92,122000,36
+NoSQL,90,125000,35
+MongoDB,89,124000,34
+PostgreSQL,91,126000,36
+MySQL,90,120000,32
+Oracle DB,88,128000,30
+Firebase,87,115000,29
+AWS,95,150000,41
+Azure,94,148000,40
+Google Cloud,93,147000,39
+Docker,92,140000,38
+Kubernetes,93,145000,39
+Terraform,90,138000,37
+Ansible,88,135000,35
+Linux,91,130000,34
+Networking,89,128000,33
+Ethical Hacking,92,145000,42
+Penetration Testing,90,142000,40
+Data Engineering,94,150000,41
+Big Data,92,148000,39
+Hadoop,88,135000,34
+Spark,90,140000,36
+Tableau,87,118000,30
+Power BI,88,120000,31
+Excel Advanced,85,105000,28
+Business Analysis,89,125000,33
+Product Management,91,135000,35
+UI/UX Design,90,120000,32
+Graphic Design,85,100000,27
+Figma,88,115000,30
+Adobe XD,86,112000,29
+Photoshop,87,110000,28
+Illustrator,86,108000,27
+Digital Marketing,90,125000,34
+SEO,88,115000,32
+Content Writing,85,95000,26
+Copywriting,87,105000,29
+Social Media Marketing,89,110000,31
+Email Marketing,86,102000,28
+Affiliate Marketing,84,100000,27
+Salesforce,91,140000,36
+SAP,92,145000,37
+ERP Systems,90,138000,35
+CRM Tools,89,130000,34
+HR Analytics,87,120000,31
+Financial Analysis,88,125000,32
+Accounting,85,110000,28
+Investment Banking,91,150000,38
+Risk Management,89,135000,34
+Supply Chain,88,130000,33
+Logistics,86,120000,30
+Project Management,92,135000,36
+Agile Methodology,91,132000,35
+Scrum Master,90,130000,34
+Quality Assurance,88,120000,32
+Testing Automation,89,125000,33
+Selenium,87,118000,31
+Game Development,86,122000,32
+Unity,85,120000,31
+Unreal Engine,84,125000,33
+AR/VR,83,130000,35
+Robotics,88,135000,36
+IoT,90,138000,37
+Embedded Systems,87,132000,34
+Electronics Design,85,128000,32
+Mechanical Design,84,125000,30
+Civil Engineering,83,120000,28
+AutoCAD,86,115000,29
+SolidWorks,85,118000,30
+MATLAB,87,125000,32
+Statistics,90,135000,36
+Operations Research,88,130000,34
