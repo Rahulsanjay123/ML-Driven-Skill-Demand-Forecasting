@@ -54,8 +54,8 @@ function Forecast() {
         try {
             const baseUrl = import.meta.env.VITE_API_URL || "/api"
             
-            // 1. Get Prediction from ML proxy
-            const predictRes = await axios.post(
+            // Single robust call for both prediction and metadata
+            const res = await axios.post(
                 `${baseUrl}/predict`,
                 {
                     skill,
@@ -67,18 +67,9 @@ function Forecast() {
                 }
             )
             
-            // 2. Try to get detailed metadata from backend
-            let skillMetadata = null
-            try {
-                const metadataRes = await axios.get(`${baseUrl}/skills/${skill}`)
-                skillMetadata = metadataRes.data
-            } catch (err) {
-                console.log("No metadata found for this skill, using defaults.")
-            }
-
             setResult({
-                ...predictRes.data,
-                metadata: skillMetadata || skillDetails.default
+                ...res.data,
+                metadata: res.data.metadata || skillDetails.default
             })
             setActiveTab("about")
         } catch (err) {
